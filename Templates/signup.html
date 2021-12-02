@@ -1,4 +1,5 @@
 {% extends 'base.html'%}
+
 {% block content %}
         <div class="card">
             <div class="card-body">
@@ -10,27 +11,27 @@
               {% endif%}
                 <h1 style="text-align: center;">Signup</h1>
                 
-                <form method="POST" action="">
+                <form method="POST" action="" novalidate>
                   {% csrf_token %}
                   <div class="mb-3">
                     <label for="username" class="form-label">UserName</label>
-                    <input  class="form-control" name="username" placeholder="Username">
+                    {{form.username}}
                   </div>
                   <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
-                    <input  class="form-control" name="email" placeholder="Email Address">
+                    {{form.email}}
                   </div>
                   <div class="mb-3">
-                    <label for="passwor1" class="form-label">Password</label>
-                    <input type="password" class="form-control" name="password1" placeholder="Password">
+                    <label for="password1" class="form-label">Password</label>
+                    {{form.password1}}
                   </div>
                   <div class="mb-3">
                     <label for="password2" class="form-label">Confirm Password</label>
-                    <input  type="password" class="form-control" name="Password2" placeholder="Confirm Password">
+                    {{form.password2}}
                   </div>
                   <div class="mb-3">
                     <label for="address" class="form-label">Address</label>
-                    <input  class="form-control" name="address" placeholder="Enter Address">
+                    {{form.address}}
                   </div>
                  
                     <button type="submit" class="btn btn-primary">Signup</button>
