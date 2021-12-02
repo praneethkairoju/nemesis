@@ -1,0 +1,45 @@
+{% extends 'base.html'%}
+{% block content %}
+        <div class="card">
+            <div class="card-body">
+              {% if messages%}
+              {% for message in messages%}
+              <div class="alert alert-success"> {{message}}</div>
+              {% endfor%}
+
+              {% endif%}
+                <h1 style="text-align: center;">Signup</h1>
+                
+                <form method="POST" action="">
+                  {% csrf_token %}
+                  <div class="mb-3">
+                    <label for="username" class="form-label">UserName</label>
+                    <input  class="form-control" name="username" placeholder="Username">
+                  </div>
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input  class="form-control" name="email" placeholder="Email Address">
+                  </div>
+                  <div class="mb-3">
+                    <label for="passwor1" class="form-label">Password</label>
+                    <input type="password" class="form-control" name="password1" placeholder="Password">
+                  </div>
+                  <div class="mb-3">
+                    <label for="password2" class="form-label">Confirm Password</label>
+                    <input  type="password" class="form-control" name="Password2" placeholder="Confirm Password">
+                  </div>
+                  <div class="mb-3">
+                    <label for="address" class="form-label">Address</label>
+                    <input  class="form-control" name="address" placeholder="Enter Address">
+                  </div>
+                 
+                    <button type="submit" class="btn btn-primary">Signup</button>
+                  </form>
+                  <div class="mb-8">
+                    
+                    Allready have an Account <a href="{% url 'login'%} " style="text-decoration: none;" class="mb-3"> Login</a>
+                  </div>
+
+            </div>
+          </div>
+ {% endblock%}     

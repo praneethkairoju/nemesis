@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+{% block content %}
+
+<div class="card">
+          {% for i in name%}
+            <div class="card-body">
+              
+              <h3><span>Username : </span>{{i.username}}</h3>
+              <h3><span>Email Address : </span>{{i.email}}</h3>
+              <h3><span>Address : </span>{{i.address}}</h3>
+              
+            </div>
+          {% endfor %}
+          </div>
+
+          {% endblock%}
